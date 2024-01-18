@@ -1,0 +1,24 @@
+[
+    {
+      "firstName": "Sandy",
+      "lastName": "Robbins",
+      "email": "peanutbutterandapencil@gmail.com",
+      "favoriteColor": "pink",
+      "birthday": "April 1"
+    },
+    {
+      "firstName": "Marie",
+      "lastName": "Whittaker",
+      "email": "marie@wordfire.com",
+      "favoriteColor": "fire",
+      "birthday": "Nov 3"
+    },
+    {
+      "firstName": "Jason",
+      "lastName": "Shoemaker",
+      "email": "jshoemaker123@gmail.com",
+      "favoriteColor": "rust",
+      "birthday": "Feb 15"
+    }
+  ]
+  
