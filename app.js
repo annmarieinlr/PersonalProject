@@ -6,7 +6,7 @@ const mongodb = require('./db/connect');
 const port = process.env.PORT || 8080;
 const app = express();
 
-//Add middleware to parse the json - I noticed my version of express does not need body-parser
+//Parse json
 app.use(express.json())
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

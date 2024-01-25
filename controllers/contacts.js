@@ -37,5 +37,77 @@ const getSingle = async (req, res, next) => {
   });
 };
 
+
+//This is my function to create a new contact
+
+const newContact = async (req, res) => {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+
+//get a response from the database *note for me: 201 = ok and new resourse was created; 500=error
+  const response = await mongodb
+    .getDb()
+    .db('cse341')
+    .collection('contacts')
+    .insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res.status(500).json(response.error || 'There was an error creating this contact.');
+  }
+};
+
+  
+
+  //Update a contact
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const contact = {
+  firstName: req.body.firstName,
+  lastName: req.body.lastName,
+  email: req.body.email,
+  favoriteColor: req.body.favoriteColor,
+  birthday: req.body.birthday
+  };
+
+  const response = await mongodb
+    .getDb()
+    .db('cse341')
+    .collection('contacts')
+    .replaceOne({ _id: userId }, contact);  //***I can't decide if I should use updateONe() or replaceOne()
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'An error occurred updating this document.');
+  }
+  
+};
+
+
+
+
+// Delete contact 
+
+const deleteContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb()
+    .db('cse341')
+    .collection('contacts')
+    .deleteOne({ _id: userId });
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'An error occurred deleting this contact.');
+  }
+};
+
+
 //export the functions
-module.exports = { getAll, getSingle };
+module.exports = { getAll, getSingle, newContact, updateContact, deleteContact};  
