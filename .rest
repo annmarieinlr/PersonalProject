@@ -21,10 +21,10 @@ Content-Type: application/json
 
 {
   "firstName": "John",
-  "lastName": "Goodwin",
-  "email": "john.goodwin@wotf.com",
+  "lastName": "Goodboy",
+  "email": "john.goodboy@wotf.com",
   "favoriteColor": "Red",
-  "birthday": "March 1"
+  "birthday": "March 15"
 }
 
 ###
@@ -35,9 +35,9 @@ Content-Type: application/json
   "firstName": "John",
   "lastName": "Goodwin",
   "email": "john.goodwin@wotf.com",
-  "favoriteColor": "Purple",
+  "favoriteColor": "Blue",
   "birthday": "March 1"
 }
 
 ###
-DELETE http://localhost:8080/contacts/65a94f89e581b7d8276a9bb9 HTTP/1.1
+DELETE http://localhost:8080/contacts/65b58ccb00e6541e39090719 HTTP/1.1
