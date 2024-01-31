@@ -1,7 +1,6 @@
 GET http://localhost:8080 HTTP/1.1
 
-###
-GET https://wk2-personalproject.onrender.com/contacts HTTP/1.1
+
 
 ###
 GET http://localhost:8080/contacts HTTP/1.1
@@ -41,3 +40,35 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8080/contacts/65b58ccb00e6541e39090719 HTTP/1.1
+
+###
+GET https://wk2-personalproject.onrender.com/contacts HTTP/1.1
+
+POST https://wk2-personalproject.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Goodboy",
+  "email": "john.goodboy@wotf.com",
+  "favoriteColor": "Red",
+  "birthday": "March 15"
+}
+
+###
+PUT https://wk2-personalproject.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Goodwin",
+  "email": "john.goodwin@wotf.com",
+  "favoriteColor": "Blue",
+  "birthday": "March 1"
+}
+
+###
+DELETE https://wk2-personalproject.onrender.com/contacts HTTP/1.1
+
+###
+GET https://wk2-personalproject.onrender.com/contacts/65a94f89e581b7d8276a9bb9 HTTP/1.1
